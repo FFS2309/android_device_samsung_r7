@@ -38,5 +38,5 @@ PRODUCT_GMS_CLIENTID_BASE := android-samsung
 BUILD_FINGERPRINT := samsung/r7/r7:12/KEINPLAN/N770FXXU7DUA8:user/release-keys
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-        PRODUCT_NAME=crownltexx \
+        PRODUCT_NAME=r7 \
         PRIVATE_BUILD_DESC="r7-userdebug 10 KEINPLAN N770FXXU7DUA8 release-keys"
