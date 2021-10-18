@@ -14,16 +14,49 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/samsung/crownlte
+DEVICE_PATH := device/samsung/r7
+
+# Architecture
+TARGET_ARCH := arm64
+TARGET_ARCH_VARIANT := armv8-a
+TARGET_CPU_ABI := arm64-v8a
+TARGET_CPU_ABI2 :=
+TARGET_CPU_VARIANT := cortex-a55
+
+# 2nd Architecture
+TARGET_2ND_ARCH := arm
+TARGET_2ND_ARCH_VARIANT := armv8-2a
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := armeabi
+TARGET_2ND_CPU_VARIANT := cortex-a55
+
+# Kernel/Board flags
+ENABLE_CPUSETS := true
+ENABLE_SCHEDBOOST := true
+TARGET_BOARD_SUFFIX := _64
+TARGET_USES_64_BIT_BINDER := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := crownltexx,crownlteks,crownlte
+TARGET_OTA_ASSERT_DEVICE := r7
 
 # Kernel
-TARGET_KERNEL_CONFIG := exynos9810-crownlte_defconfig
+TARGET_KERNEL_CONFIG := afaneh92-r7_defconfig
 
-# Partitions
-BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 4561305600
+# (TMP)
+# Dynamic Partition
+BOARD_SUPER_PARTITION_SIZE := 4446945824
+BOARD_SUPER_PARTITION_GROUPS := google_dynamic_partitions
+BOARD_GOOGLE_DYNAMIC_PARTITIONS_PARTITION_LIST := \
+    system \
+    vendor \
+    product \
+    odm
+BOARD_GOOGLE_DYNAMIC_PARTITIONS_SIZE := 3886143816
+
+# System as root
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+BOARD_SUPPRESS_SECURE_ERASE := true
+AB_OTA_UPDATER := false
 
 # Inherit common board flags
 include device/samsung/universal9810-common/BoardConfigCommon.mk
