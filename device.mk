@@ -20,4 +20,4 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 $(call inherit-product, device/samsung/universal9810-common/universal9810-common.mk)
 
 # Inherit device vendor
-$(call inherit-product-if-exists, vendor/samsung/crownlte/crownlte-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/r7/r7-vendor.mk)
