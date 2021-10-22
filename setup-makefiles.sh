@@ -18,10 +18,10 @@
 set -e
 
 # Required!
-export DEVICE=crownlte
+export DEVICE=r7
 export DEVICE_COMMON=universal9810-common
 export VENDOR=samsung
 
-export DEVICE_BRINGUP_YEAR=2018
+export DEVICE_BRINGUP_YEAR=2020
 
 "./../../${VENDOR}/${DEVICE_COMMON}/setup-makefiles.sh" "$@"
